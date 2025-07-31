@@ -1,0 +1,56 @@
+{
+  "common": {
+    "language": "Language",
+    "signin": "Sign In",
+    "signup": "Sign Up",
+    "register": "Register",
+    "login": "Login",
+    "email": "Email",
+    "password": "Password",
+    "alreadyHaveAccount": "Already have an account?",
+    "home": "Home",
+    "settings": "Settings",
+    "signOut": "Sign Out",
+    "toggleTheme": "Toggle Theme",
+    "welcome": "Welcome back",
+    "loading": "Loading..."
+  },
+  "auth": {
+    "welcomeBack": "Welcome Back",
+    "signInToAccount": "Sign in to your account",
+    "createAccount": "Create Account",
+    "signUpToGetStarted": "Sign up to get started",
+    "username": "Username",
+    "confirmPassword": "Confirm Password",
+    "dontHaveAccount": "Don't have an account?",
+    "signUp": "Sign Up",
+    "signIn": "Sign In",
+    "createAccountButton": "Create Account",
+    "testCredentials": "Use any username, email and password to test the sign in",
+    "testSignUpCredentials": "Use any username, email and password to test the sign up"
+  },
+  "home": {
+    "welcomeMessage": "Welcome back, {{name}}!",
+    "description": "This is your home screen. You can customize it with your app's main features.",
+    "user": "User"
+  },
+  "settings": {
+    "profile": "Profile",
+    "accountSettings": "Account Settings",
+    "privacy": "Privacy",
+    "notifications": "Notifications",
+    "languageSettings": "Language Settings",
+    "selectLanguage": "Select Language"
+  },
+  "error": {
+    "required": "This field is required",
+    "fillAllFields": "Please fill in all fields",
+    "passwordsDontMatch": "Passwords do not match",
+    "passwordTooShort": "Password must be at least 6 characters",
+    "signInFailed": "Sign In Failed",
+    "signUpFailed": "Sign Up Failed",
+    "invalidCredentials": "Invalid credentials. Please try again.",
+    "usernameEmailInUse": "Username or email might already be in use.",
+    "generalError": "An error occurred. Please try again."
+  }
+}

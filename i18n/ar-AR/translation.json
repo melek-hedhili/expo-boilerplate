@@ -1,0 +1,56 @@
+{
+  "common": {
+    "language": "اللغة",
+    "signin": "تسجيل الدخول",
+    "signup": "إنشاء حساب",
+    "register": "تسجيل",
+    "login": "تسجيل الدخول",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "alreadyHaveAccount": "هل لديك حساب بالفعل؟",
+    "home": "الرئيسية",
+    "settings": "الإعدادات",
+    "signOut": "تسجيل الخروج",
+    "toggleTheme": "تغيير المظهر",
+    "welcome": "مرحباً بعودتك",
+    "loading": "جاري التحميل..."
+  },
+  "auth": {
+    "welcomeBack": "مرحباً بعودتك",
+    "signInToAccount": "سجل دخولك إلى حسابك",
+    "createAccount": "إنشاء حساب",
+    "signUpToGetStarted": "سجل للبدء",
+    "username": "اسم المستخدم",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "dontHaveAccount": "ليس لديك حساب؟",
+    "signUp": "إنشاء حساب",
+    "signIn": "تسجيل الدخول",
+    "createAccountButton": "إنشاء حساب",
+    "testCredentials": "استخدم أي اسم مستخدم وبريد إلكتروني وكلمة مرور لاختبار تسجيل الدخول",
+    "testSignUpCredentials": "استخدم أي اسم مستخدم وبريد إلكتروني وكلمة مرور لاختبار إنشاء الحساب"
+  },
+  "home": {
+    "welcomeMessage": "مرحباً بعودتك، {{name}}!",
+    "description": "هذه هي شاشة الرئيسية. يمكنك تخصيصها بالميزات الرئيسية لتطبيقك.",
+    "user": "المستخدم"
+  },
+  "settings": {
+    "profile": "الملف الشخصي",
+    "accountSettings": "إعدادات الحساب",
+    "privacy": "الخصوصية",
+    "notifications": "الإشعارات",
+    "languageSettings": "إعدادات اللغة",
+    "selectLanguage": "اختر اللغة"
+  },
+  "error": {
+    "required": "هذا الحقل مطلوب",
+    "fillAllFields": "يرجى ملء جميع الحقول",
+    "passwordsDontMatch": "كلمات المرور غير متطابقة",
+    "passwordTooShort": "كلمة المرور يجب أن تكون 6 أحرف على الأقل",
+    "signInFailed": "فشل تسجيل الدخول",
+    "signUpFailed": "فشل إنشاء الحساب",
+    "invalidCredentials": "بيانات غير صحيحة. يرجى المحاولة مرة أخرى.",
+    "usernameEmailInUse": "اسم المستخدم أو البريد الإلكتروني مستخدم بالفعل.",
+    "generalError": "حدث خطأ. يرجى المحاولة مرة أخرى."
+  }
+}

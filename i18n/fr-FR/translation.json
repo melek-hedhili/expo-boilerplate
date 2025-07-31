@@ -1,0 +1,56 @@
+{
+  "common": {
+    "language": "Langue",
+    "signin": "Se connecter",
+    "signup": "S'inscrire",
+    "register": "S'inscrire",
+    "login": "S'identifier",
+    "email": "Email",
+    "password": "Mot de passe",
+    "alreadyHaveAccount": "Vous avez déjà un compte?",
+    "home": "Accueil",
+    "settings": "Paramètres",
+    "signOut": "Se déconnecter",
+    "toggleTheme": "Changer de thème",
+    "welcome": "Bon retour",
+    "loading": "Chargement..."
+  },
+  "auth": {
+    "welcomeBack": "Bon Retour",
+    "signInToAccount": "Connectez-vous à votre compte",
+    "createAccount": "Créer un Compte",
+    "signUpToGetStarted": "Inscrivez-vous pour commencer",
+    "username": "Nom d'utilisateur",
+    "confirmPassword": "Confirmer le Mot de Passe",
+    "dontHaveAccount": "Vous n'avez pas de compte?",
+    "signUp": "S'inscrire",
+    "signIn": "Se Connecter",
+    "createAccountButton": "Créer un Compte",
+    "testCredentials": "Utilisez n'importe quel nom d'utilisateur, email et mot de passe pour tester la connexion",
+    "testSignUpCredentials": "Utilisez n'importe quel nom d'utilisateur, email et mot de passe pour tester l'inscription"
+  },
+  "home": {
+    "welcomeMessage": "Bon retour, {{name}} !",
+    "description": "Ceci est votre écran d'accueil. Vous pouvez le personnaliser avec les principales fonctionnalités de votre application.",
+    "user": "Utilisateur"
+  },
+  "settings": {
+    "profile": "Profil",
+    "accountSettings": "Paramètres du compte",
+    "privacy": "Confidentialité",
+    "notifications": "Notifications",
+    "languageSettings": "Paramètres de langue",
+    "selectLanguage": "Sélectionner la langue"
+  },
+  "error": {
+    "required": "Ce champ est obligatoire",
+    "fillAllFields": "Veuillez remplir tous les champs",
+    "passwordsDontMatch": "Les mots de passe ne correspondent pas",
+    "passwordTooShort": "Le mot de passe doit contenir au moins 6 caractères",
+    "signInFailed": "Échec de la Connexion",
+    "signUpFailed": "Échec de l'Inscription",
+    "invalidCredentials": "Identifiants invalides. Veuillez réessayer.",
+    "usernameEmailInUse": "Le nom d'utilisateur ou l'email est peut-être déjà utilisé.",
+    "generalError": "Une erreur s'est produite. Veuillez réessayer."
+  }
+}
