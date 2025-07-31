@@ -55,7 +55,7 @@ const flags: Flag[] = [
   {
     icon: require("@/assets/icons/png/en.png"),
     name: "English",
-    code: "en-US",
+    code: "en",
   },
   {
     icon: require("@/assets/icons/png/fr.png"),

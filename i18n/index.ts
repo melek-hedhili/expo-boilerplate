@@ -1,51 +1,77 @@
 import * as Localization from "expo-localization";
 import i18n, { LanguageDetectorAsyncModule } from "i18next";
 import { initReactI18next } from "react-i18next";
+import { I18nManager } from "react-native";
 
 import { storage, STORAGE_KEYS } from "@/lib/storage";
-import { I18nManager } from "react-native";
 import translationAr from "./ar-AR/translation.json";
 import translationEn from "./en-US/translation.json";
 import translationFr from "./fr-FR/translation.json";
-console.log("location", Localization.getLocales()[0].languageCode);
+
+// Supported languages mapping
+const SUPPORTED_LANGUAGES = {
+  en: "en",
+  "en-US": "en",
+  fr: "fr-FR",
+  "fr-FR": "fr-FR",
+  ar: "ar-AR",
+  "ar-AR": "ar-AR",
+} as const;
+
 const resources = {
-  "fr-FR": { translation: translationFr },
   en: { translation: translationEn },
+  "fr-FR": { translation: translationFr },
   "ar-AR": { translation: translationAr },
 };
+
+type LanguageType = keyof typeof resources;
+
+// Simplified language detector
 const languageDetector: LanguageDetectorAsyncModule = {
   type: "languageDetector",
-  init: () => {}, // Required by i18next, but can be a no-op
-  async: true, // To flag the detection as asynchronous
-  detect: async (): Promise<string | undefined> => {
+  init: () => {},
+  async: true,
+  detect: async (): Promise<string> => {
     const storedLanguage = storage.getString(STORAGE_KEYS.LANGUAGE);
-    console.log("storedLanguage", storedLanguage);
-    const deviceLanguage =
-      storedLanguage || Localization.getLocales()[0].languageCode;
-    console.log(
-      "device language",
-      deviceLanguage,
-      "location",
-      Localization.getLocales()[0]
+    if (
+      storedLanguage &&
+      SUPPORTED_LANGUAGES[storedLanguage as keyof typeof SUPPORTED_LANGUAGES]
+    ) {
+      return SUPPORTED_LANGUAGES[
+        storedLanguage as keyof typeof SUPPORTED_LANGUAGES
+      ];
+    }
+
+    const deviceLanguage = Localization.getLocales()[0].languageCode;
+    return (
+      SUPPORTED_LANGUAGES[deviceLanguage as keyof typeof SUPPORTED_LANGUAGES] ||
+      "en"
     );
-    return deviceLanguage || "en";
   },
   cacheUserLanguage: () => {},
 };
+
+// Initialize i18n
 const initI18n = async () => {
-  let savedLanguage = storage.getString(STORAGE_KEYS.LANGUAGE);
+  const savedLanguage = storage.getString(STORAGE_KEYS.LANGUAGE);
+  const initialLanguage =
+    savedLanguage || Localization.getLocales()[0].languageCode || "en";
+  const mappedLanguage =
+    SUPPORTED_LANGUAGES[initialLanguage as keyof typeof SUPPORTED_LANGUAGES] ||
+    "en";
+
+  // Save the detected language if not already saved
   if (!savedLanguage) {
-    savedLanguage = Localization.getLocales()[0].languageCode || "en";
+    storage.set(STORAGE_KEYS.LANGUAGE, mappedLanguage);
   }
 
-  i18n
+  await i18n
     .use(languageDetector)
     .use(initReactI18next)
     .init({
       compatibilityJSON: "v4",
       resources,
-
-      lng: savedLanguage,
+      lng: mappedLanguage,
       fallbackLng: "en",
       interpolation: {
         escapeValue: false,
@@ -54,14 +80,16 @@ const initI18n = async () => {
 };
 
 initI18n();
-type LanguageType = keyof typeof resources;
+
+// Optimized language change function
 const changeLanguage = async (language: LanguageType) => {
-  if (i18n.language === language) {
-    return;
-  }
+  if (i18n.language === language) return;
+
   console.log("Changing language to:", language);
   storage.set(STORAGE_KEYS.LANGUAGE, language);
   await i18n.changeLanguage(language);
+
+  // Handle RTL for Arabic
   const isRTL = language === "ar-AR";
   I18nManager.allowRTL(isRTL);
   I18nManager.forceRTL(isRTL);
