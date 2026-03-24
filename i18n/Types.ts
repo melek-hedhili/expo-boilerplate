@@ -2,12 +2,8 @@ import translationEn from "./en-US/translation.json";
 
 type DeepKeys<T> = T extends object
   ? {
-      [K in keyof T]: T[K] extends object
-        ? //@ts-ignore
-          `${K}` | `${K}.${DeepKeys<T[K]>}`
-        : //@ts-ignore
-          `${K}`;
-    }[keyof T]
+      [K in keyof T & (string | number)]: `${K}` | `${K}.${DeepKeys<T[K]>}`;
+    }[keyof T & (string | number)]
   : never;
 
 export type TranslationType = typeof translationEn;
